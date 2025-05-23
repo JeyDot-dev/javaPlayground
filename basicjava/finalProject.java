@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class finalProject {
     private final String[]    articles = {"chopsticks", "forks", "knives", "incense", "mugs", "napkins", "natto", "beer", "wand", "lego"};
     private final float[]     price = {2f, 3f, 4.2f, 3.99f, 5f, 1.50f, 6.45f, 3.20f, 18.5f, 12.40f};
-    private final int[]       cart = new int[10];
+//    private final int[]       cart = new int[10];
     private float       total = 0f;
 
     public void run() {
@@ -35,7 +35,7 @@ public class finalProject {
                     int i = searchArticle(input);
                     System.out.print("Please enter the quantity you would like to add to your cart: ");
                     int quantity = Integer.parseInt(scanner.nextLine().toLowerCase().strip());
-                    cart[i] += quantity;
+//                    cart[i] += quantity;
                     total += price[i] * quantity;
                     System.out.printf("%d %s has been added to the cart.%n--The current total is: %.2fchf.%n", quantity, articles[i], total);
                 }catch (ItemNotFoundException | NumberFormatException e) {
@@ -52,7 +52,7 @@ public class finalProject {
     }
 
     private int searchArticle (String input) throws ItemNotFoundException{
-        for (int i = 0; i < cart.length; i++) {
+        for (int i = 0; i < articles.length; i++) {
             if (input.equals(articles[i])) {
                 System.out.println(i);
                 return i;
